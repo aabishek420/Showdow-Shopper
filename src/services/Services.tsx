@@ -5,6 +5,8 @@ const BASE_URL = "https://fakestoreapi.com";
 
 // ---------- API Calls ----------
 
+
+
 // Get all categories
 export const getCategories = async (): Promise<string[]> => {
   const res = await fetch(`${BASE_URL}/products/categories`);

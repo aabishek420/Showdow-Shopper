@@ -5,15 +5,26 @@ interface Product {
   description: string;
   category: string;
   image: string;
-  rating: {
+  rating?: {
     rate: number;
     count: number;
   };
 }
 
+
 interface ProductCardProps {
-  product: Product;
+  product: {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    rating?: {
+      rate: number;
+      count: number;
+    };
+  };
 }
+
 
  interface Rating {
   rate: number;
@@ -33,3 +44,9 @@ interface CategoryCard {
   name: string;
   image: string;
 }
+
+
+interface CategoryProductsProps {
+  category: string;
+}
+

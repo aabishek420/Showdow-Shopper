@@ -37,15 +37,15 @@ function Categories() {
 
   return (
     <div className="p-4 md:p-6">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-        Categories
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center uppercase">
+       <span className="text-primary">Categories</span> 
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {categories.map((cat) => (
           <div
             key={cat}
-            onClick={() => navigate(`/categories/${cat.toLowerCase().replace(/\s/g, "-")}`)}
+            onClick={() => navigate(`/categories/${cat}`)}
             className="p-3 md:p-5 border rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 cursor-pointer flex flex-col items-center"
           >
             <img
