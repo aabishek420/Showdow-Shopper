@@ -23,7 +23,7 @@ const CategoryProducts: React.FC = () => {
     fetchProducts();
   }, [categoryName]);
 
-  if (loading) return <p className="text-center mt-5">Loading {categoryName}...</p>;
+  if (loading) return <p className="text-center mt-5"> <span className="loading loading-bars loading-xl"></span>{categoryName}...</p>;
 
   return (
     <div className="px-6 py-4">

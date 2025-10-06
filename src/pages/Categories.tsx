@@ -33,7 +33,7 @@ function Categories() {
   }, []);
 
   if (loading)
-    return <p className="text-center mt-8 text-gray-600">Loading categories...</p>;
+    return <p className="text-center mt-8"><span className="loading loading-bars loading-xl"></span></p>;
 
   return (
     <div className="p-4 md:p-6">
