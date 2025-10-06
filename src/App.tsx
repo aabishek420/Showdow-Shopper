@@ -1,7 +1,9 @@
+import Categories from "./components/Categories"
+
 const App = () => {
   return (
     <div>
-      <h1>Hi ABi</h1>
+    <Categories />
     </div>
   )
 }

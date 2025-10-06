@@ -4,11 +4,13 @@ import './index.css'
 import App from './App.tsx'
 import Navbar from './components/Navbar.tsx'
 import { BrowserRouter } from 'react-router-dom'
+import MainHeader from './components/MainHeader.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Navbar />
+      <MainHeader />
       <App />
     </BrowserRouter>
   </StrictMode>,
