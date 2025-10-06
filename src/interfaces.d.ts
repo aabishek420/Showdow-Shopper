@@ -29,3 +29,7 @@ interface Product {
   image: string;
   rating: Rating;
 }
+interface CategoryCard {
+  name: string;
+  image: string;
+}
