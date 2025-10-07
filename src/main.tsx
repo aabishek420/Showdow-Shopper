@@ -6,15 +6,23 @@ import Navbar from './components/Navbar.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import MainHeader from './components/MainHeader.tsx'
 import { CartProvider } from './context/CartContext.tsx'
+import { PrimeReactProvider } from 'primereact/api';
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+        
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-     <CartProvider>
+
     <BrowserRouter>
-      <Navbar />
-      <MainHeader />
-      <App />
+     <PrimeReactProvider>
+      <CartProvider>
+        <Navbar />
+        <MainHeader />
+        <App />
+      </CartProvider>
+      </PrimeReactProvider>
     </BrowserRouter>
-    </CartProvider>
+
   </StrictMode>,
 )
