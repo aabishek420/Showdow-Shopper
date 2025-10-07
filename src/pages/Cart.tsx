@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { toast } from "react-toastify";
 const Cart = () => {
   const { cart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useCart();
+   const navigate = useNavigate();
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
@@ -80,6 +82,10 @@ const Cart = () => {
           </button>
         </div>
       </div>
+      <div className="flex flex-row justify-center items-center mt-7 ">
+      <button className="px-4 py-2 bg-teal-500 text-white rounded hover:font-semibold shadow-lg"
+            onClick={() => navigate(-1)}>Continue Purchase</button>
+            </div>
     </>
   );
 };
