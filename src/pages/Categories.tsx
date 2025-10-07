@@ -42,19 +42,19 @@ function Categories() {
       </h2>
 
       <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        {categories.map((cat) => (
+        {categories.map((category) => (
           <div
-            key={cat}
-            onClick={() => navigate(`/categories/${cat}`)}
+            key={category}
+            onClick={() => navigate(`/categories/${category}`)}
             className="p-3 md:p-5 border rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 cursor-pointer flex flex-col items-center"
           >
             <img
-              src={categoryImages[cat.toLowerCase()]}
-              alt={cat}
+              src={categoryImages[category.toLowerCase()]}
+              alt={category}
               className="w-full h-40 md:h-48 object-cover rounded-md mb-3"
             />
             <div className="text-center capitalize font-semibold text-lg md:text-xl">
-              {cat}
+              {category}
             </div>
           </div>
         ))}
