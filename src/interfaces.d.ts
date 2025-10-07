@@ -9,6 +9,7 @@ interface Product {
     rate: number;
     count: number;
   };
+  
 }
 
 
@@ -50,3 +51,20 @@ interface CategoryProductsProps {
   category: string;
 }
 
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
+
+
+interface CartContextType {
+  cart: CartItem[];
+  addToCart: (item: CartItem) => void;
+  removeFromCart: (id: number) => void;
+  clearCart: () => void;
+  increaseQuantity: (id: number) => void;
+  decreaseQuantity: (id: number) => void;
+}
