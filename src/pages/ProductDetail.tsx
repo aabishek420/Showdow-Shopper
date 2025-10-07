@@ -40,7 +40,7 @@ const ProductDetail: React.FC = () => {
             {/* Right Side - Product Details */}
             <div className="flex flex-col gap-4 p-4">
                 <h1 className="text-3xl font-bold">{product.title}</h1>
-                <p className="text-lg text-gray-700">{product.description}</p>
+                <p className="text-lg text-gray-700 text-justify">{product.description}</p>
                 <p className="text-2xl md:text-3xl font-bold text-primary">${product.price}</p>
                 <div className="flex items-center gap-2">
                     <span className="text-yellow-500 font-bold">{product.rating?.rate ?? "N/A"}</span>
@@ -51,7 +51,7 @@ const ProductDetail: React.FC = () => {
                 </button>
                 <button
                     onClick={() => window.history.back()}
-                    className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition w-max"
+                    className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition"
                 >
                      Back
                 </button>
