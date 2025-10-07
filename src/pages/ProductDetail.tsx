@@ -41,7 +41,7 @@ const ProductDetail: React.FC = () => {
             <div className="flex flex-col gap-4 p-4">
                 <h1 className="text-3xl font-bold">{product.title}</h1>
                 <p className="text-lg text-gray-700 text-justify">{product.description}</p>
-                <p className="text-2xl md:text-3xl font-bold text-primary">${product.price}</p>
+                <p className="text-2xl md:text-3xl font-bold text-primary">₹{product.price}</p>
                 <div className="flex items-center gap-2">
                     <span className="text-yellow-500 font-bold">{product.rating?.rate ?? "N/A"}</span>
                     <span className="text-gray-500">({product.rating?.count} reviews)</span>

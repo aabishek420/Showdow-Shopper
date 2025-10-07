@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <p>{product.rating?.rate ?? "N/A"}</p>
         </div>
         <div>
-          <p className="text-primary/90 font-semibold">${product.price}</p>
+          <p className="text-primary/90 font-semibold">₹{product.price}</p>
         </div>
       </div>
     </div>
