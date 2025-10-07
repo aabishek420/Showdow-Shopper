@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { getProductById } from "../services/Services";
+import { toast, ToastContainer } from "react-toastify";
 
 interface Product {
     id: number;
@@ -49,7 +50,10 @@ const ProductDetail: React.FC = () => {
     const isInCart = cart.some((item) => item.id === product.id);
 
     return (
+        <>
+          <ToastContainer position="top-right" theme="colored"  autoClose={2000}/>
         <div className="bg-base-200 m-4 p-4 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+       
 
             {/* Left - Product Image */}
             <div className="bg-base-100 p-5 flex justify-center items-center">
@@ -93,7 +97,14 @@ const ProductDetail: React.FC = () => {
                 {/* Buttons */}
                 <div className="flex gap-3 mt-4">
                     <button
-                        onClick={() => addToCart({ ...product, quantity: 1 })}
+                        onClick={() => {
+                            if (isInCart) {
+                                navigate("/cart"); 
+                            } else {
+                                addToCart({ ...product, quantity: 1 }); 
+                                toast.success(`Your product is Successfully Added to Cart..!!!`)// else, add item to cart with quantity 1
+                            }
+                        }}
                         className="px-6 py-2 bg-primary text-white rounded hover:bg-primary/90 transition"
                     >
                         {isInCart ? "Go to Cart" : "Add to Cart"}
@@ -107,7 +118,9 @@ const ProductDetail: React.FC = () => {
                     </button>
                 </div>
             </div>
+          
         </div>
+        </>
     );
 };
 
