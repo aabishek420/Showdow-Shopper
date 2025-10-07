@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { getProductById } from "../services/Services";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 
 interface Product {
     id: number;
@@ -51,8 +51,7 @@ const ProductDetail: React.FC = () => {
 
     return (
         <>
-          <ToastContainer position="top-right" theme="colored"  autoClose={2000}/>
-        <div className="bg-base-200 m-4 p-4 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
+             <div className="bg-base-200 m-4 p-4 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
        
 
             {/* Left - Product Image */}

@@ -8,12 +8,13 @@ import MainHeader from './components/MainHeader.tsx'
 import { CartProvider } from './context/CartContext.tsx'
 import { PrimeReactProvider } from 'primereact/api';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-
+import "primereact/resources/primereact.min.css";
+import { ToastContainer } from "react-toastify";
         
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-
+<ToastContainer position="top-right" autoClose={2000} theme="colored" />
     <BrowserRouter>
      <PrimeReactProvider>
       <CartProvider>
